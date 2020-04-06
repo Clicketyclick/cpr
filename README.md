@@ -11,6 +11,11 @@ The register was established in 1968 by combining information from all the munic
 It is a ten-digit number with the format DDMMYY-SSSS, where DDMMYY is the date of birth and SSSS is a sequence number. The first digit of the sequence number encodes the century of birth (so that centenarians are distinguished from infants), and the last digit of the sequence number is odd for males and even for females.[2]"
 [Wikipedia: Personal identification number (Denmark)](https://en.wikipedia.org/wiki/Personal_identification_number_(Denmark))
 
+
+Dating back to the late sixties this system has several hacks to implement three centuries in a two digit year format (sic!)
+This can only be achieved by setting a fixed range of birth years from 1858 to 2057.
+
+
 ## Syntax
 
 Valid syntax 10 digits and one optional '-' at pos 7. i.e. "YYMMDD-SSSm" or "YYMMDDSSSm"
