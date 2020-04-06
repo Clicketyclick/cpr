@@ -1,7 +1,7 @@
 <?php
 /**
  *  @file  cpr.php
- *  @brief Checking danish CPR-numbers
+ *  @brief Validating Danish CPR-numbers
  *  
  *  @details   Syntax check and validation
  *  
@@ -251,6 +251,5 @@ function days_in_month($month, $year) {
             )
     );
 }   // days_in_month()
-
 
 ?>
