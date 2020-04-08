@@ -71,11 +71,6 @@ foreach ( $testset as $cpr => $expected ) {
         )
         . " = cpr( $cpr )" 
     );
-/*
-    echo "\n>>>\n";
-    var_export($result);
-    echo "\n<<<\n";
-*/
 }
 
 //---------------------------------------------------------------------
