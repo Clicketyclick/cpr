@@ -80,12 +80,6 @@ foreach ( $testset as $cpr => $expected ) {
 
 //---------------------------------------------------------------------
 
-//todo( 'getRedirectUrl( $url)' );
-//todo( ['getRedirectUrl( $url)'] );
-//todo( ['getRedirectUrl( $url)','dummy'] );
-//todo( 'getRedirectUrl( $url)','dummy' );
-
-
-//test_result( $testtimer ); // , TRUE 
+test_result( $testtimer ); // , TRUE 
 
 ?>
