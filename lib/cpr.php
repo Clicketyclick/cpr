@@ -15,9 +15,9 @@
  *  @copyright  http://www.gnu.org/licenses/lgpl.txt LGPL version 3
  *  @author     Erik Bachmann <ErikBachmann@ClicketyClick.dk>
  *  @since      2020-04-01T16:54:17
- *  @version    2020-04-14T22:06:52
+ *  @version    2020-11-03T13:54:00
  */
-include_once "lib/debug.php";
+include_once __DIR__."/debug.php";
 
 
 /**
