@@ -2,11 +2,11 @@
 # https://docs.travis-ci.com/user/languages/php/
 language: php
 php:
-  #- '7.3'
+#  - '7.3'
   - '7.4'
-  #- '8.0'
-  #- hhvm # on Trusty only
-  #- nightly
+#  - '8.0'
+#  - hhvm # on Trusty only
+#  - nightly
 #
 ## Specific phpunit
 #before_script:
