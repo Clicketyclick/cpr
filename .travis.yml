@@ -2,16 +2,15 @@
 # https://docs.travis-ci.com/user/languages/php/
 language: php
 php:
-  - '7.3'
+  #- '7.3'
   - '7.4'
-  - '8.0'
-  - hhvm # on Trusty only
-  - nightly
+  #- '8.0'
+  #- hhvm # on Trusty only
+  #- nightly
 #
 ## Specific phpunit
 #before_script:
 #  - curl -sSfL -o ~/.phpenv/versions/hhvm/bin/phpunit https://phar.phpunit.de/phpunit-5.7.phar
 ## Dependencies
 #install: php vendor/vendors.php
-
 script: "php test/dummy.php"
