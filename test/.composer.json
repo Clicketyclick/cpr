@@ -1,0 +1,19 @@
+{
+    "name": "cpr",
+    "description": "Checking danish CPR-numbers",
+    "homepage": "https://github.com/Clicketyclick/cpr",
+    "authors": [
+        {
+            "name": "Erik Bachmann",
+            "email": "ErikBachmann@ClicketyClick.dk",
+            "role": "Developer"
+        }
+    ],
+    "license": "BSD-3-Clause",
+    "require": {
+        "php": ">=7.4.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": " 4.8.35"
+    }
+}
