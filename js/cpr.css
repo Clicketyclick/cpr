@@ -1,0 +1,43 @@
+/**
+ *  @file      cpr.css
+ *  @brief     Digit input field and 
+ *  
+ *  @details   Nicked from https://codepen.io/netsi1964/pen/MaJvaW ;-)
+ *  
+ *  @copyright http://www.gnu.org/licenses/lgpl.txt LGPL version 3
+ *  @author    Erik Bachmann <ErikBachmann@ClicketyClick.dk>
+ *  @since     2022-10-24T09:26:41 / erba
+ *  @version   2022-10-24T09:26:41
+ */
+
+input.invalid+label:before {
+	content: "✕";
+	color: red;
+	font-weight: 800;
+}
+
+input.valid+label:before {
+	content: "✔";
+	color: green;
+}
+
+input.cpr {
+	font-family: 'Inconsolata', monospace ;
+	font-size: 32pt;
+	background: #eee;
+	border-width: 0;
+	padding: 1em;
+}
+
+label {
+	font-family: 'Inconsolata', monospace ;
+	font-size: 62pt;
+	position: relative;
+	left: -62pt;
+	top: 15px;
+}
+
+:focus.cpr {
+    outline: none;
+	box-shadow: 0 0 0;
+}
