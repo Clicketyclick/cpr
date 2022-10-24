@@ -3,16 +3,18 @@
  *  @brief Testing syntax of Danish Social Security Numbers (CPR))
  *  
  *  @details    Please refere to README file at https://github.com/Clicketyclick/cpr
+ *  Please note tha errors and warnings will be written to console.log. Only valid date 
  *  
- *  CPR method:	https://github.com/Clicketyclick/cpr
- *  JS method:	https://codepen.io/netsi1964/pen/MaJvaW
+ *  CPR method: https://github.com/Clicketyclick/cpr
+ *  JS method:  https://codepen.io/netsi1964/pen/MaJvaW
  */
 
 //https://stackoverflow.com/a/43718864/7485823
 var sprintf = (str, ...argv) => !argv.length ? str : 
     sprintf(str = str.replace(sprintf.token||"$", argv.shift()), ...argv);
 
-var cpr_error	= false;
+var cpr_error   = false;
+var cpr         = false;
 
 /**
  *  @fn         validate_cpr_number
@@ -24,9 +26,9 @@ var cpr_error	= false;
  *  @return             0 on match OR on error - any other value
  *  
  *  @example    function checkCPR() {
- *  	cpr.classList.remove("invalid");
- *  	cpr.classList.remove("valid");;(validate_cpr_number(cpr.value)) ? cpr.classList.add("valid"): (cpr.value!=="") ? cpr.classList.add("invalid") : "";
- *  }	// checkCPR()
+ *      cpr.classList.remove("invalid");
+ *      cpr.classList.remove("valid");;(validate_cpr_number(cpr.value)) ? cpr.classList.add("valid"): (cpr.value!=="") ? cpr.classList.add("invalid") : "";
+ *  }    // checkCPR()
  *  
  *  var cpr = document.querySelector(".cpr");
  *  cpr.onchange = checkCPR;
@@ -40,46 +42,45 @@ var cpr_error	= false;
  *  @since      2022-10-24T09:00:51
  */
 function validate_cpr_number($cpr) {
-		var original = $cpr;
-		$cpr = $cpr.replace(/[ \D]/ig, "");	// Remove blanks
-		if ( typeof $cpr === "undefined" || $cpr === "" ) {
-			console.log("cpr empty");
-			return false;
-		}
+        var original = $cpr;
+        $cpr = $cpr.replace(/[ \D]/ig, "");    // Remove blanks
+        if ( typeof $cpr === "undefined" || $cpr === "" ) {
+            console.log("cpr empty");
+            return false;
+        }
 
-		if (typeof $cpr === "undefined" || $cpr === "" || $cpr.length!==10) {
-			console.log("cpr not 10 digits");
-			return false;
-		};
-		
-		if (original !== $cpr) {
-			cpr.value = $cpr;
-		}
+        if (typeof $cpr === "undefined" || $cpr === "" || $cpr.length!==10) {
+            console.log("cpr not 10 digits");
+            return false;
+        };
 
-		var thisRegex = new RegExp('[0-9]{6}[-]{0,1}[0-9]{4}');
+        if (original !== $cpr) {
+            cpr.value = $cpr;
+        }
 
-		if(!thisRegex.test( $cpr )){
-			console.log("Illegal pattern: ["+$cpr+"]");
-			return false;
-		}
+        var thisRegex = new RegExp('[0-9]{6}[-]{0,1}[0-9]{4}');
 
-		$year   	= Number( $cpr.substring( 4,6 ) );
-		$month  	= $cpr.substring( 2,4 );
-		$day    	= $cpr.substring(  0,2 );
-		$serial 	= $cpr.substring(  6 );
-		$fullyear       = 1900 + Number( $year );
-		$shortdate      = $cpr.substring( 0, 6 ); // DDMMMYY
-		$serialrange    = $cpr.substring( 6, 7 );
+        if(!thisRegex.test( $cpr )){
+            console.log("Illegal pattern: ["+$cpr+"]");
+            return false;
+        }
 
-		console.log( "Full year : " + $fullyear );
-		console.log( "Short date : " + $shortdate );
-		console.log( "Serial : " 	+ $serial );
-		console.log( "Serial range: " + $serialrange);
+        $year           = Number( $cpr.substring( 4,6 ) );
+        $month          = $cpr.substring( 2,4 );
+        $day            = $cpr.substring(  0,2 );
+        $serial         = $cpr.substring(  6 );
+        $fullyear       = 1900 + Number( $year );
+        $shortdate      = $cpr.substring( 0, 6 ); // DDMMMYY
+        $serialrange    = $cpr.substring( 6, 7 );
+
+        console.log( "Full year : "     + $fullyear );
+        console.log( "Short date : "    + $shortdate );
+        console.log( "Serial : "        + $serial );
+        console.log( "Serial range: "   + $serialrange);
 
 
     // Check serial range to generate full year (4 digits)
     switch ( $serialrange ) {
-        //$fullyear   = 1900 + $year (Default)
         case ('0'):
         case ('1'):
         case ('2'):
@@ -93,13 +94,13 @@ function validate_cpr_number($cpr) {
         case ('6'):
         case ('7'):
         case ('8'):
-        console.log( "YEAR: $year" );
+            console.log( "YEAR: $year" );
             if ( 57 < $year ) {  // 1858 - 1899
                 $fullyear   -= 100;
             } else {
-				if ( 57 > $year )   // 2000 - 2057
+                if ( 57 > $year )   // 2000 - 2057
                 $fullyear   += 100;
-			}
+            }
         break;
         case ('9'):
             if ( 36 > $year )   // 1858 - 1899
@@ -109,40 +110,43 @@ function validate_cpr_number($cpr) {
             console.log( "Illegal serial number ["+$serial+"]");  // Just in case
             return false;
     }
-    console.log( "Full year ["+$fullyear+"]" );
-
-	if ( 1858 > $fullyear || 2057 < $fullyear ) {
-		console.log( "Illegal year ["+$fullyear+"]. Valid range is 1857-2057");
-		return false;
+    //console.log( "Full year ["+$fullyear+"]" );
+    
+    // Validate year
+    if ( 1858 > $fullyear || 2057 < $fullyear ) {
+        console.log( "Illegal year ["+$fullyear+"]. Valid range is 1857-2057");
+        return false;
     }
-    // Validate month
+    // Validate month of year
     if ( ! ( 0 < $month && $month < 13 ) ) {    // Fixed range (at least 1)
         console.log( "Illegal month ["+$month+"]. Valid 1-12");
         return false;
     }
-    console.log( "month ["+$month+"]" );
+    //console.log( "month ["+$month+"]" );
 
-	$repDate	= validateDay ( $fullyear, $month, $day );
-	if ( ! $repDate  ) {
-		console.log( "Day not valid: "+$fullyear+"-"+$month+"-"+$day );
-		return false;
-	} else {	// Day or replacement day
-		$day	= $repDate;
-	}
+    // Validate day of month
+    $repDate    = validateDay ( $fullyear, $month, $day );
+    if ( ! $repDate  ) {
+        console.log( "Day not valid: "+$fullyear+"-"+$month+"-"+$day );
+        return false;
+    } else {    // Day or replacement day
+        $day    = $repDate;
+    }
 
-	if ( ! validateCprModulus11( $cpr ) ) {
-		console.log( "Factor 11 failed");
-		return false;
-	}	
-	//return $main_int % 11 == 0;
-	return true;
+    // Factor 11 check on last digit
+    if ( ! validateCprModulus11( $cpr ) ) {
+        console.log( "Factor 11 failed");
+        return false;
+    }    
+    //return $main_int % 11 == 0;
+    return true;
 }
 
 // Validate day
 function validateDay ( $fullyear, $month, $day ) {
     $maxDays = days_in_month( $fullyear, $month );
     if ( ! ( 0 < $day && $day <= $maxDays ) ) {
-        if ( 60 < $day && $day <= 60 + $maxDays  ) {	// Only replacement days are valid
+        if ( 60 < $day && $day <= 60 + $maxDays  ) {    // Only replacement days are valid
            
             // Year 37 - 57: section 5, 6, 7, 8
             if (
@@ -154,20 +158,20 @@ function validateDay ( $fullyear, $month, $day ) {
                 ||
                 ( 8037 <= $serial && 8058 > $serial ) 
             ) {
-				console.log( "Serial number is invalid ["+$serial+"]. Invalid ranges are 5037-5057, 6037-6057, 7037-7057, 8037-8057" );
+                console.log( "Serial number is invalid ["+$serial+"]. Invalid ranges are 5037-5057, 6037-6057, 7037-7057, 8037-8057" );
             } else {
                 console.log( sprintf("This is a replacement for [$ $ $]", $day - 60, $month, $year) );
-				return $day - 60;
+                return $day - 60;
             }
         } else {
             console.log( "Illegal day ["+$day+"]. Valid 1-$maxDays in month $month of the year ["+$fullyear+"]" );
         }
         return false;
-	}
+    }
     console.log( "day ["+$day+"] shortdate ["+$shortdate+"] full["+$fullyear+"]" );
 
-	return $day;
-}	// validateDay()
+    return $day;
+}    // validateDay()
 
 
 
@@ -199,18 +203,16 @@ function validateCprModulus11( $cpr ) {
     $main_int = 0;
     $factors = [ 4, 3, 2, 7, 6, 5, 4, 3, 2, 1 ];
 
-	for (var ciffer = 0; ciffer < $cpr.length; ciffer++) {
-		$main_int += parseInt($cpr.substr(ciffer, 1)) * $factors[ciffer];
-	}
+    for (var ciffer = 0; ciffer < $cpr.length; ciffer++) {
+        $main_int += parseInt($cpr.substr(ciffer, 1)) * $factors[ciffer];
+    }
 
-	if ( $main_int % 11 != 0 ) {
-/*		console.log( "Factor 11 OK");
-	} else {
-*/		console.log( "Factor 11 failed");
-		return false;
-	}
+    if ( $main_int % 11 != 0 ) {
+        console.log( "Factor 11 failed");
+        return false;
+    }
 
-	return true;;
+    return true;;
 }   // validateCprModulus11()
 
 /**
@@ -272,10 +274,12 @@ function days_in_month( $year, $month ) {
 
 
 function checkCPR() {
-	cpr.classList.remove("invalid");
-	cpr.classList.remove("valid");;(validate_cpr_number(cpr.value)) ? cpr.classList.add("valid"): (cpr.value!=="") ? cpr.classList.add("invalid") : "";
-}	// checkCPR()
+    cpr.classList.remove("invalid");
+    cpr.classList.remove("valid");;(validate_cpr_number(cpr.value)) ? cpr.classList.add("valid"): (cpr.value!=="") ? cpr.classList.add("invalid") : "";
+}    // checkCPR()
 
-var cpr = document.querySelector(".cpr");
-cpr.onchange = checkCPR;
-cpr.onkeyup = checkCPR;
+function initCPR() {
+    cpr = document.querySelector(".cpr");
+    cpr.onchange = checkCPR;
+    cpr.onkeyup = checkCPR;
+}    // initCPR()
