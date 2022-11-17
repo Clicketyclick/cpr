@@ -75,6 +75,9 @@ CPR can only be used for person born between 1858 and 2057
     '010191',	// January 1st 1991
     '010192',	// January 1st 1992
 
+## Demo
+
+[Demo](https://clicketyclick.github.io/cpr/js/)
     
 ## References
 
