@@ -78,7 +78,11 @@ CPR can only be used for person born between 1858 and 2057
 ## Demo
 
 [Demo](https://clicketyclick.github.io/cpr/js/)
-    
+
+[<kbd>&#x1D31A;</kbd> Release](https://github.com/Clicketyclick/cpr/releases)
+[<kbd>&lt;&gt;</kbd> Source](https://github.com/Clicketyclick/cpr)
+
+
 ## References
 
 - [Constructing the CPR (Opbygning af CPR-nummeret)](https://www.cpr.dk/media/17534/personnummeret-i-cpr.pdf)
