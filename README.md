@@ -1,8 +1,6 @@
-# CPR
-Checking danish CPR-numbers
+## Checking danish CPR-numbers
 
 [Personal identification number (Denmark)](https://en.wikipedia.org/wiki/Personal_identification_number_(Denmark))
-
 
 "The Danish Personal Identification number (Danish: CPR-nummer or personnummer) is a national identification number, which is part of the personal information stored in the Civil Registration System (Danish: Det Centrale Personregister).
 
