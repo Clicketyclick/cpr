@@ -77,9 +77,8 @@ CPR can only be used for person born between 1858 and 2057
 
 ## Demo
 
-[Demo](https://clicketyclick.github.io/cpr/js/)
-
-[<kbd>&#x1D31A;</kbd> Release](https://github.com/Clicketyclick/cpr/releases)
+[<kbd>&#x24B9;</kbd> Demo](https://clicketyclick.github.io/cpr/js/)
+[<kbd>&#x24C7;</kbd> Releases](https://github.com/Clicketyclick/cpr/releases)
 [<kbd>&lt;&gt;</kbd> Source](https://github.com/Clicketyclick/cpr)
 
 
