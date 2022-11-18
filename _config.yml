@@ -1,2 +1,2 @@
-title: CPR (SSN)                                                                              <script async type="text/javascript" src="/cpr/incl.js"></script>
-description: Checking danish CPR-numbers (Personal identification number in Denmark)
+title: cpr                 <script async type="text/javascript">var REPO="cpr";</script><script async type="text/javascript" src="/topmenu.js"></script>
+description: Checking danish CPR-numbers
