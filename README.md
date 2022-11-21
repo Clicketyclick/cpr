@@ -2,13 +2,19 @@
 
 [Personal identification number (Denmark)](https://en.wikipedia.org/wiki/Personal_identification_number_(Denmark))
 
-"The Danish Personal Identification number (Danish: CPR-nummer or personnummer) is a national identification number, which is part of the personal information stored in the Civil Registration System (Danish: Det Centrale Personregister).
+> "The Danish Personal Identification number (Danish: CPR-nummer or personnummer) is a national identification number, which is part of the personal information stored in the Civil Registration System (Danish: Det Centrale Personregister).
+> 
+> The register was established in 1968 by combining information from all the municipal civil registers of Denmark into one.[^1]
+> The register came into force by [[royal assent]] in Greenland with the effect from 1 July 1972.[^2]
+> 
+> It is a ten-digit number with the format DDMMYY-SSSS, where DDMMYY is the date of birth and SSSS is a sequence number. The first digit of the sequence number encodes the century of birth (so that centenarians are distinguished from infants), and the last digit of the sequence number is odd for males and even for females.[^3]
 
-The register was established in 1968 by combining information from all the municipal civil registers of Denmark into one.[1]
+-- <cite>[Wikipedia: Personal identification number (Denmark)](https://en.wikipedia.org/wiki/Personal_identification_number_(Denmark))</cite>
 
-It is a ten-digit number with the format DDMMYY-SSSS, where DDMMYY is the date of birth and SSSS is a sequence number. The first digit of the sequence number encodes the century of birth (so that centenarians are distinguished from infants), and the last digit of the sequence number is odd for males and even for females.[2]"
-[Wikipedia: Personal identification number (Denmark)](https://en.wikipedia.org/wiki/Personal_identification_number_(Denmark))
 
+[^1]: ["The Civil Registration System in Denmark: 2. HISTORICAL BACKGROUND"](http://www.cpr.dk/cpr/site.aspx?p=198&ArticleTypeID=76&t=ForsideVisartikel&Articleid=4327#cprsysuk_02). Archived from the original on 16 January 2009. Retrieved 1 December 2012.
+[^2]: ["Loven er sat i kraft på Grønland med virkning fra 1. juli 1972 ved kgl. anordning nr. 242 af 8. juni 1972 (Danish)"](https://www.retsinformation.dk/eli/lta/1978/508).
+[^3]: ["The Civil Registration System in Denmark: 4.2 The personal identification number"](https://web.archive.org/web/20090116235452/http://cpr.dk/cpr/site.aspx?p=198#cprsysuk_06). Archived from [the original](http://www.cpr.dk/cpr/site.aspx?p=198&ArticleTypeID=76&t=ForsideVisartikel&Articleid=4327#cprsysuk_06) on 16 January 2009. Retrieved 1 December 2012.
 
 Dating back to the late sixties this system has several hacks to implement three centuries in a two digit year format (sic!)
 This can only be achieved by setting a fixed range of birth years from 1858 to 2057.
